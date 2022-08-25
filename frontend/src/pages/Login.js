@@ -1,12 +1,34 @@
 import React from 'react'
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { hideLoading, showLoading } from "../redux/alertsSlice";
+
 
 function Login() {
 
-  const onFinish = (values) => {
-    console.log("Received values of form:", values)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const onFinish = async (values) => {
+    try {
+      dispatch(showLoading());
+      const response = await axios.post("/api/user/login", values);
+      dispatch(hideLoading());
+      if (response.data.success) {
+        toast.success(response.data.message);
+        navigate("/");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      dispatch(hideLoading());
+      toast.error("Something went wrong");
+    }
   };
+
+
 
   return (
     <div className="authentication">
