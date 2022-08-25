@@ -1,0 +1,26 @@
+{
+  "name": "scheduling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanbTokam/Scheduling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeanbTokam/Scheduling/issues"
+  },
+  "homepage": "https://github.com/jeanbTokam/Scheduling#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.3",
+    "nodemon": "^2.0.19"
+  }
+}
