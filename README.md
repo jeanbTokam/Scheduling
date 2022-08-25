@@ -1,8 +1,8 @@
 # Scheduling
 # set up the project
-npx create-react-app my-app
-cd my-app
-npm start
+- npx create-react-app my-app
+- cd my-app
+- npm start
 # install all the dependencies
   # add json file
     - npm init
