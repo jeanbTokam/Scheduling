@@ -2,14 +2,17 @@ import React from 'react'
 import { Button, Form, Input } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
 function Register() {
+
+  const onFinish = (values) => {
+    console.log("Received values of form:", values)
+  };
+
   return (
     <div className="authentication">
       <div className="authentication-form card p-3">
         <h1 className="card-title">Welcome to Salem State</h1>
-        <Form layout="vertical" >
+        <Form layout="vertical" onFinish={onFinish}>
           <Form.Item label="Name" name="name">
             <Input placeholder="Name" />
           </Form.Item>
@@ -33,13 +36,6 @@ function Register() {
         </Form>
       </div>
     </div>
-
-
-
-
-
-
-
   )
 }
 
